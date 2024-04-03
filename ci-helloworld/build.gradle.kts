@@ -29,6 +29,7 @@ tasks.jar {
 }
 
 tasks.jacocoTestReport {
+    dependsOn(tasks.test)
     reports {
         csv.required = true
     }
