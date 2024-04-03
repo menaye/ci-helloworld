@@ -21,8 +21,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Init gradle wrapper
-        run: gradle wrapper
       - name: Setting Permissions
         run: chmod a+x gradlew
       - name: Build with Gradle
@@ -40,8 +38,6 @@ jobs:
         with:
           jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
           fail-if-branches-less-than: 100
-          name: jacoco-badge-generator
-          uses: cicirello/jacoco-badge-generator@v2.11.0
           fail-on-coverage-decrease: true
             
 
