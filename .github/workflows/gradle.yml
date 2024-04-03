@@ -21,6 +21,8 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+      - name: Init gradle wrapper
+        run: gradle wrapper
       - name: Setting Permissions
         run: chmod a+x gradlew
       - name: Build with Gradle
