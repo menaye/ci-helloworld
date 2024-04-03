@@ -24,7 +24,7 @@ tasks.test {
 
 tasks.jar {
     manifest {
-        attributes["Main-Class"] = "Main"
+        attributes("Main-Class" to "Main")
     }
 }
 
