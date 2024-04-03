@@ -22,7 +22,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Setting Permissions
-        run: git update-index --chmod=+x gradlew
+        run: chmod a+x gradlew
       - name: Build with Gradle
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
@@ -38,6 +38,10 @@ jobs:
         with:
           jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
           fail-if-branches-less-than: 100
+          name: jacoco-badge-generator
+          uses: cicirello/jacoco-badge-generator@v2.11.0
+          fail-on-coverage-decrease: true
+            
 
   build_and_publish_docker_image:
     name: Publish to Docker Hub
