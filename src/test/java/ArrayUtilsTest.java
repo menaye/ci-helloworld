@@ -27,6 +27,9 @@ public class ArrayUtilsTest {
         assertEquals(0, ArrayUtils.findLast(new int[]{2, 3, 5}, 2));
     }
 
+//    @Test
+//    public void testFindLast
+
     @Test
     public void testOddOrPosNull() {
         // Do not execute fault
