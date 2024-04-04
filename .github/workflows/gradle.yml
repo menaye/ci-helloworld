@@ -2,9 +2,9 @@ name: Java CI/CD with Gradle
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
   # permissions:
   # contents: read
@@ -38,6 +38,8 @@ jobs:
         with:
           jacoco-csv-file: build/reports/jacoco/test/jacocoTestReport.csv
           fail-if-branches-less-than: 100
+          fail-on-coverage-decrease: true
+            
 
   build_and_publish_docker_image:
     name: Publish to Docker Hub
